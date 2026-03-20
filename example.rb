@@ -5,21 +5,21 @@
 class Example < Formula
   desc "An example CLI built with cli-forge"
   homepage "https://github.com/coreycoburn/cli-forge"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.1.0/example_darwin_amd64.tar.gz"
-      sha256 "6bbfb7d3a706cfc59745cfb3c411a0e3705a898b01d8bdac467d0215116e345d"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/example_darwin_amd64.tar.gz"
+      sha256 "6e80d18cfdcdc99921ec6b8870abc49f284020a31750af8deb05a373ba0809d5"
 
       define_method(:install) do
         bin.install "example"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.1.0/example_darwin_arm64.tar.gz"
-      sha256 "39b1af59f455ab57ace6ec709c0d944a4d1abd3d7c7258278d1efb958664098d"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/example_darwin_arm64.tar.gz"
+      sha256 "7f2f84386782f8493751a245db202a7ea96a68e369a50c15819a15f59a9a7922"
 
       define_method(:install) do
         bin.install "example"
@@ -29,15 +29,15 @@ class Example < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.1.0/example_linux_amd64.tar.gz"
-      sha256 "50f3cf513bf1e9587f336caeb215132f29f297039cb328b32b4a211200cc131d"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/example_linux_amd64.tar.gz"
+      sha256 "e700912765da0bb208dbcc764b36be8842f3d04743d10d2d25bb9135e8fd9526"
       define_method(:install) do
         bin.install "example"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.1.0/example_linux_arm64.tar.gz"
-      sha256 "c0fd93f166a795636068089977b6d800109d6c3de091cc143ba80dff3c5f2a6f"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/example_linux_arm64.tar.gz"
+      sha256 "d2a687a82a42b1a72aed50fe92b6c37d6ebddb5289819b66df5d4e5d6201acbd"
       define_method(:install) do
         bin.install "example"
       end
