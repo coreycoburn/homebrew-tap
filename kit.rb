@@ -5,24 +5,23 @@
 class Kit < Formula
   desc "Design asset toolkit — convert and optimize files"
   homepage "https://github.com/coreycoburn/cli-forge"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   depends_on "ghostscript"
-  depends_on "inkscape" => :cask
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/kit_darwin_amd64.tar.gz"
-      sha256 "a79067c3b41346ffd7b6d41d33247d9fc6b8b11838aa19f5087d19af99ad0b39"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.1/kit_darwin_amd64.tar.gz"
+      sha256 "e85ae92bd959cba547076c254f074350f19efd225bcb715e0fd521d76ed4a20b"
 
       define_method(:install) do
         bin.install "kit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/kit_darwin_arm64.tar.gz"
-      sha256 "8980cf8a0f5b4f9ae6d04e3c762e6c2b7d4075ca68151d8095fc67d8f153394b"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.1/kit_darwin_arm64.tar.gz"
+      sha256 "250d3c7d9d8d8c610ae5f328f9770f4c36bb53a6487a2baac2466e3712dbdf8d"
 
       define_method(:install) do
         bin.install "kit"
@@ -32,18 +31,25 @@ class Kit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/kit_linux_amd64.tar.gz"
-      sha256 "51b39156170115b70ba0792b956c10493aeda3151d898130951968bb53a2c827"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.1/kit_linux_amd64.tar.gz"
+      sha256 "be51603f549c165e0d80dff885b61e3fee83bd021ce34d3d91e3c7eabc52ed00"
       define_method(:install) do
         bin.install "kit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.0/kit_linux_arm64.tar.gz"
-      sha256 "69772c27fe90f82f55e2a5fbf476b361f4a99850fc52d3bae76603bf989ff0f1"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.2.1/kit_linux_arm64.tar.gz"
+      sha256 "ebdde43b7555d764ef8adf25683154bb084c6525e7a97d5747969cc483dde69d"
       define_method(:install) do
         bin.install "kit"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      The convert command also requires Inkscape:
+        brew install --cask inkscape
+    EOS
   end
 end
