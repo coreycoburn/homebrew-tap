@@ -5,23 +5,23 @@
 class Kit < Formula
   desc "Design asset toolkit — convert and optimize files"
   homepage "https://github.com/coreycoburn/cli-forge"
-  version "0.3.2"
+  version "0.3.3"
   license "MIT"
 
   depends_on "ghostscript"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.2/kit_darwin_amd64.tar.gz"
-      sha256 "9dbc7a714805e6ee052c0f9d55dc6db96faa739ebeb008a5854ca2039bbac2c2"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.3/kit_darwin_amd64.tar.gz"
+      sha256 "2b1b58576ac6a4ff20b5e06c76e1cc3dc19898505be3783342e4c651bcb22e58"
 
       define_method(:install) do
         bin.install "kit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.2/kit_darwin_arm64.tar.gz"
-      sha256 "b5bdf8036c58323dcf9777eee88dcd438172954c51e3c3fad9143945126ed697"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.3/kit_darwin_arm64.tar.gz"
+      sha256 "b6872ad963b9764166bc189313512609699c2db5952a65f64aa052c5f0bbf4f7"
 
       define_method(:install) do
         bin.install "kit"
@@ -31,15 +31,15 @@ class Kit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.2/kit_linux_amd64.tar.gz"
-      sha256 "352099b77f196eebbcecf659cee1dcd2880a94aa88b206d59291de84023406b6"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.3/kit_linux_amd64.tar.gz"
+      sha256 "4359e9101879323b00625882aaabbfce7a008357d01505dd932c06a33e10df0c"
       define_method(:install) do
         bin.install "kit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.2/kit_linux_arm64.tar.gz"
-      sha256 "acd92a4320f0d1a47e4a9375e26a0aee99e7f9d286d412958277cc2cd44b33b8"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.3/kit_linux_arm64.tar.gz"
+      sha256 "7137650da20b62b65b15ad35640d5b42ef5794e0c59ff33ce492db0817520c43"
       define_method(:install) do
         bin.install "kit"
       end
