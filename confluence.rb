@@ -5,21 +5,21 @@
 class Confluence < Formula
   desc "Confluence CLI — fetch and manage pages"
   homepage "https://github.com/coreycoburn/cli-forge"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.0/confluence_darwin_amd64.tar.gz"
-      sha256 "1b8a4e0ecd47bf9f900eb67fbd188cdd7c1e3315b38ac16a3a3cf4df3db2ec29"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.1/confluence_darwin_amd64.tar.gz"
+      sha256 "0e802ef7011d101bbe3d43197f2427a88f432866fb64501ce44896f4eb23027a"
 
       define_method(:install) do
         bin.install "confluence"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.0/confluence_darwin_arm64.tar.gz"
-      sha256 "5cca2eb4e7e34bebacf1836b0905a75795e64727472ca8842225e93d1c592fd1"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.1/confluence_darwin_arm64.tar.gz"
+      sha256 "0b70a27c3a36e01c32fe0a96898e29037a92b3c601c74de2d3bde1904780c3ef"
 
       define_method(:install) do
         bin.install "confluence"
@@ -29,15 +29,15 @@ class Confluence < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.0/confluence_linux_amd64.tar.gz"
-      sha256 "2bfacfafd41b254fef16adbbd8f8ec360373897bc1a629abfabc006798a50b97"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.1/confluence_linux_amd64.tar.gz"
+      sha256 "3fd0de4d772716a9305cfe84e36a770e4714b4ae111734b8cb7f78952ce8ed00"
       define_method(:install) do
         bin.install "confluence"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.0/confluence_linux_arm64.tar.gz"
-      sha256 "68cdcead39e057b3a9ea646722ff1453fba49e852a9474dec11ac4113c32c0dd"
+      url "https://github.com/coreycoburn/cli-forge/releases/download/v0.3.1/confluence_linux_arm64.tar.gz"
+      sha256 "306b757afce59772c20949bfe2ba2b91146c97ac67cebff87cc6e89a39ac3cef"
       define_method(:install) do
         bin.install "confluence"
       end
